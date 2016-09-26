@@ -1,0 +1,21 @@
+---
+suite:
+  name: Webapp
+  system: ./docker-compose.yml
+  task_service: tests
+
+tests:
+- name: webapp_is_available
+  spec:
+  - assert: [webapp_is_available]
+  - stop: [webapp]
+  - assert: [webapp_is_not_available]
+  - failure: [webapp_is_available]
+  - start: [webapp]
+  - assert: [webapp_is_available]
+
+tasks:
+- name: webapp_is_not_available
+  command: /tasks/webapp_is_not_available.sh
+- name: webapp_is_available
+  command: /tasks/webapp_is_available.sh
