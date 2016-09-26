@@ -7,7 +7,7 @@ RUN apk add --update ruby ruby-rdoc ruby-irb  ruby-io-console \
 ADD . /opt/sinatra/
 WORKDIR /opt/sinatra
 
-EXPOSE 5000
+EXPOSE 4567
 RUN bundle install
 
 CMD ["bundle", "exec", "ruby", "server.rb"]
