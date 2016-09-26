@@ -5,7 +5,7 @@ When in this directory you can run it via `delmo` or `delmo --parallel`.
 
 [docker-compose.yml](./docker-compose.yml) defines the services that make up this system.
 
-The `proxy` service consits of nginx [configured](./nginx/nginx.conf) to load balance between 2 webapp instances .
+The `proxy` service consits of haproxy [configured](./haproxy/haproxy.cfg) to load balance between 2 webapp instances .
 
 The `webapp` services run a [minimal sinatra server](./sinatra/server.rb).
 
