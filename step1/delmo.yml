@@ -1,0 +1,14 @@
+---
+suite:
+  name: Webapp
+  system: ./docker-compose.yml
+  task_service: webapp
+
+tests:
+- name: hello_world
+  spec:
+  - exec: [hello_world]
+
+tasks:
+- name: hello_world
+  command: echo hello world
