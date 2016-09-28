@@ -1,6 +1,6 @@
 FROM alpine:3.4
 
-RUN apk add --update ruby ruby-rdoc ruby-irb  ruby-io-console \
+RUN apk add --update curl ruby ruby-rdoc ruby-irb  ruby-io-console \
         && rm -rf /var/cache/apk/* \
         && gem install bundler
 
